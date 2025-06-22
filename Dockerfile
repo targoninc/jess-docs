@@ -10,4 +10,4 @@ COPY ./src ./src
 
 RUN bun run build-prod
 
-CMD ["bun", "run", "start"]
+CMD ["bun", "run", "start-prod"]
