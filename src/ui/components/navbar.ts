@@ -4,8 +4,11 @@ import {search} from "../lib/state.ts";
 
 export function navbar() {
     return create("div")
-        .classes("navbar")
+        .classes("navbar", "flex", "align-children", "space-between")
         .children(
+            create("h3")
+                .text("Jess Docs")
+                .build(),
             input({
                 name: "search",
                 value: search,

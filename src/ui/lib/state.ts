@@ -12,7 +12,10 @@ export const filteredPages = compute((ps, s) => {
         return p.title.toLowerCase().includes(s.toLowerCase()) || p.children.some(c => matches(c));
     }
 
-    return ps.filter(p => matches(p));
+    return ps.filter(p => matches(p)).map(p => ({
+        ...p,
+        children: p.children.filter(c => matches(c))
+    }));
 }, pages, search);
 
 function getCurrentPage() {

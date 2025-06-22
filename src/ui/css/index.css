@@ -511,3 +511,7 @@ label {
 .layer-shadow {
     box-shadow: 0 0 15px 0px var(--bg);
 }
+
+.space-between {
+    justify-content: space-between;
+}
