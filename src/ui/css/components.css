@@ -1,20 +1,22 @@
 .app {
     padding: var(--gap-v);
     max-height: 100dvh;
-    overflow: auto;
 }
 
 .content {
-    max-width: 960px;
+    max-height: 100%;
     margin: 0 auto;
+    overflow: auto;
+    padding: var(--gap-v);
+    background: var(--bg);
+    border-radius: var(--input-border-radius);
+    border: 1px solid var(--bg-4);
 }
 
 .page {
-    margin-top: 5em;
-}
-
-.sidebar {
-    position: fixed;
+    padding-top: 5em;
+    max-height: calc(100dvh - 2 * var(--gap-v));
+    width: 100%;
 }
 
 .navbar {
@@ -34,6 +36,7 @@
     padding: .5em;
     border-radius: var(--input-border-radius);
     width: 100%;
+    border: 1px solid transparent;
 }
 
 .sidebar-link:hover {

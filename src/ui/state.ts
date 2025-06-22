@@ -18,6 +18,18 @@ function getCurrentPage() {
     return "";
 }
 
+currentPage.subscribe((page, changed) => {
+    if (!changed) {
+        return;
+    }
+
+    const url = new URL(window.location.href);
+    const searchParams = new URLSearchParams(url.search);
+    searchParams.set("page", page);
+    url.search = searchParams.toString();
+    window.history.pushState(null, "", url);
+});
+
 Api.getPages().then(newPages => {
     pages.value = newPages;
     currentPage.value = getCurrentPage();
