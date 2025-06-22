@@ -3,7 +3,7 @@ import type {PageInfo} from "./pageInfo.ts";
 import {Api} from "./api.ts";
 
 export const pages = signal<PageInfo[]>([]);
-export const currentPage = signal<string>("");
+export const currentPage = signal<string>("index.md");
 export const currentPageContent = signal<string>("");
 export const search = signal("");
 export const filteredPages = compute((ps, s) => {
