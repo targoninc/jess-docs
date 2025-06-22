@@ -6,7 +6,14 @@ export const pages = signal<PageInfo[]>([]);
 export const currentPage = signal<string>("");
 export const currentPageContent = signal<string>("");
 export const search = signal("");
-export const filteredPages = compute((ps, s) => ps.filter(p => p.title.toLowerCase().includes(s.toLowerCase())), pages, search);
+export const filteredPages = compute((ps, s) => {
+
+    function matches(p: PageInfo) {
+        return p.title.toLowerCase().includes(s.toLowerCase()) || p.children.some(c => matches(c));
+    }
+
+    return ps.filter(p => matches(p));
+}, pages, search);
 
 function getCurrentPage() {
     const url = new URL(window.location.href);
