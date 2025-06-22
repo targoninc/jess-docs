@@ -25,7 +25,7 @@ function getCurrentPage() {
         return searchParams.get("page") as string;
     }
 
-    return "";
+    return "index.md";
 }
 
 currentPage.subscribe((page, changed) => {
