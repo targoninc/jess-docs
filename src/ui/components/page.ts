@@ -1,6 +1,6 @@
 import {compute, create} from "@targoninc/jess";
 import {docsSite} from "./docs-site.ts";
-import {currentPageContent, filteredPages} from "../state.ts";
+import {currentPageContent, filteredPages} from "../lib/state.ts";
 import {sidebar} from "./sidebar.ts";
 
 export function page() {

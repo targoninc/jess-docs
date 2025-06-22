@@ -1,6 +1,6 @@
 import {create, InputType} from "@targoninc/jess";
 import {input} from "@targoninc/jess-components";
-import {search} from "../state";
+import {search} from "../lib/state.ts";
 
 export function navbar() {
     return create("div")

@@ -1,6 +1,6 @@
 import {signal, compute} from "@targoninc/jess";
 import type {PageInfo} from "./pageInfo.ts";
-import {Api} from "./lib/api.ts";
+import {Api} from "./api.ts";
 
 export const pages = signal<PageInfo[]>([]);
 export const currentPage = signal<string>("");

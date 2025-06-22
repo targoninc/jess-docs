@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@targoninc/jess": "^0.0.18",
-    "@targoninc/jess-components": "^0.0.16",
+    "@targoninc/jess-components": "^0.0.17",
     "dompurify": "^3.2.6",
     "dotenv": "^16.5.0",
     "highlight.js": "^11.11.1",
