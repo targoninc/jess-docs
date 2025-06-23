@@ -24,4 +24,4 @@ export interface BaseComponentConfig {
 
 ## List of available elements
 
-- [Button](/?page=Components/button.md)
+- [Button](/Components/button)

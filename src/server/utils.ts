@@ -1,8 +1,8 @@
 import {MIME_TYPES} from "./MIME_TYPES.ts";
-import type {PageInfo} from "../ui/pageInfo.ts";
 import fs from "fs";
 import path from "path";
 import { file } from "bun";
+import {PageInfo} from "../ui/lib/pageInfo.ts";
 
 const filesDir = path.join(process.cwd(), "src/files");
 
@@ -39,11 +39,12 @@ export async function getPages(dir: string = filesDir): Promise<PageInfo[]> {
         const title = getTitleFromMarkdown(content);
 
         const relativePath = path.relative(filesDir, filePath);
+        const folder = folders.find(f => f.endsWith(title));
 
         pages.push({
             title,
             filename: relativePath,
-            children: mdFile === "index.md" ? await getChildren(folders) : []
+            children: folder ? await getChildren([folder]) : []
         });
     }
 

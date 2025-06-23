@@ -54,7 +54,7 @@ document.body.appendChild(myTemplate("some", "text"));
 
 ## Reactive templates
 
-By using [signals](/?page=Signals/index.md), you can easily create reactive templates. Jess automatically updates only the changed element attributes.
+By using [signals](/signals), you can easily create reactive templates. Jess automatically updates only the changed element attributes.
 
 ```typescript
 import {create, Signal} from "@targoninc/jess";

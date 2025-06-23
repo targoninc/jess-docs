@@ -8,8 +8,8 @@ Jess is a framework to make templating and state management on web platforms eas
 bun install @targoninc/jess
 ```
 
-As a first read, you should become familiar with [templating](/?page=Templating/index.md) and [signals](/?page=Signals/index.md).
+As a first read, you should become familiar with [templating](/templating) and [signals](/signals).
 
 ## Components
 
-There are pre-built [components]() available for you to use. They provide an abstraction for the basic component needs.
+There are pre-built [components](/components) available for you to use. They provide an abstraction for the basic component needs.

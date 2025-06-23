@@ -3,7 +3,7 @@ import {PageInfo} from "../lib/pageInfo.ts";
 import {currentPage} from "../lib/state.ts";
 
 function toLink(page: PageInfo) {
-    return `/?page=${encodeURIComponent(page.filename)}`;
+    return `/${encodeURIComponent(page.filename)}`;
 }
 
 export function sidebarLink(page: PageInfo): AnyElement {
