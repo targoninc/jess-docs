@@ -5,7 +5,7 @@ import {sidebar} from "./sidebar.ts";
 
 export function page() {
     return create("div")
-        .classes("page", "flex")
+        .classes("page", "flex", "no-wrap")
         .children(
             compute(p => sidebar(p), filteredPages),
             compute(c => docsSite(c), currentPageContent),
