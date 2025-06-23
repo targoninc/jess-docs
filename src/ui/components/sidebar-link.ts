@@ -7,7 +7,8 @@ function toLink(page: PageInfo) {
 }
 
 export function sidebarLink(page: PageInfo): AnyElement {
-    const isActive = compute(p => p === page.filename, currentPage);
+    const clean = page.filename.replaceAll("\\", "/");
+    const isActive = compute(p => clean === p.replaceAll("\\", "/"), currentPage);
     const active = compute((a): string => a ? "active" : "_", isActive);
 
     return create("div")

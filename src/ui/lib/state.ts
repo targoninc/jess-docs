@@ -20,9 +20,16 @@ export const filteredPages = compute((ps, s) => {
 
 function getCurrentPage() {
     const url = new URL(window.location.href);
-    const searchParams = new URLSearchParams(url.search);
-    if (searchParams.has("page")) {
-        return searchParams.get("page") as string;
+    const pathname = url.pathname;
+
+    if (pathname.length > 1) {
+        let page = pathname.substring(1);
+
+        if (page.endsWith(".md")) {
+            return page;
+        }
+
+        return `${page}.md`;
     }
 
     return "index.md";
@@ -34,9 +41,16 @@ currentPage.subscribe((page, changed) => {
     }
 
     const url = new URL(window.location.href);
-    const searchParams = new URLSearchParams(url.search);
-    searchParams.set("page", page);
-    url.search = searchParams.toString();
+
+    if (page === "index.md") {
+        url.pathname = "/";
+    } else {
+        let pathPage = page;
+        if (pathPage.endsWith(".md")) {
+            pathPage = pathPage.substring(0, pathPage.length - 3);
+        }
+        url.pathname = `/${pathPage}`;
+    }
     window.history.pushState(null, "", url);
 });
 
