@@ -4,6 +4,8 @@ Jess is a framework to make templating and state management on web platforms eas
 
 ## Getting started
 
+First, install Jess in your project:
+
 ```bash
 bun install @targoninc/jess
 ```

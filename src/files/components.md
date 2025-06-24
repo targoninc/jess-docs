@@ -6,6 +6,12 @@
 bun install @targoninc/jess-components
 ```
 
+### Styles
+
+```html
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/targoninc/jess-components@0.0.17/src/src/jess-components.css"/>
+```
+
 All components have a single configuration object as a parameter. All configs extend the following `BaseComponentConfig`:
 
 ```typescript
